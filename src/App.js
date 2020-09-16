@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useQuery, useMutation } from "@apollo/client";
+import { useSubscription, useMutation } from "@apollo/client";
 import gql from "graphql-tag";
 
 // Get data:
 const GET_TODOS = gql`
-  query {
+  subscription {
     todos {
       id
       created_at
@@ -25,7 +25,7 @@ const INSERT_TODO = gql`
 `;
 
 function App() {
-  const { data, loading } = useQuery(GET_TODOS);
+  const { data, loading } = useSubscription(GET_TODOS);
   // console.log('dataprop:', data);
   const [insertTodo] = useMutation(INSERT_TODO);
   const [todoName, setTodoName] = useState("");
@@ -68,11 +68,11 @@ function App() {
       >
         <input 
           type="text" 
-          placeholder="todo" 
+          placeholder="What todo.." 
           value={todoName} 
           onChange={ (e) => setTodoName(e.target.value)}
         />
-
+        <button>Add todo</button>
       </form>
 
     </div>
