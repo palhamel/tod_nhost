@@ -62,7 +62,7 @@ function App() {
             alert("Error creating todo");
             console.log(error);
           }
-          alert("todo created");
+          // alert("todo created");
           setTodoName("");
         }}
       >
