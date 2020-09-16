@@ -1,6 +1,6 @@
-import React from 'react';
-import { useQuery } from '@apollo/client';
-import gql from 'graphql-tag'
+import React from "react";
+import { useQuery } from "@apollo/client";
+import gql from "graphql-tag";
 
 const GET_TODOS = gql`
   query {
@@ -11,33 +11,28 @@ const GET_TODOS = gql`
       completed
     }
   }
-`; 
-
+`;
+// console.log(GET_TODOS);
 
 function App() {
-
   const { data, loading } = useQuery(GET_TODOS);
+  // console.log('dataprop:', data);
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
-
+  // console.log(data.todos);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {!data ? (
+        <div>No data</div>
+      ) : (
+        <ul>
+          {data.todos.map((todo) => {
+            return <li key={todo.id}>{todo.name}</li>;
+          })}
+        </ul>
+      )}
     </div>
   );
 }
