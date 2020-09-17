@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useSubscription, useMutation } from "@apollo/client";
 import gql from "graphql-tag";
+// route and auth
+import { Link } from "react-router-dom";
+import { auth } from "./util/nhost";
 
 // Get data:
 const GET_TODOS = gql`
@@ -26,7 +29,7 @@ const INSERT_TODO = gql`
 
 function App() {
   const { data, loading } = useSubscription(GET_TODOS);
-  // console.log('dataprop:', data);
+  // console.log(data);
   const [insertTodo] = useMutation(INSERT_TODO);
   const [todoName, setTodoName] = useState("");
 
@@ -36,6 +39,9 @@ function App() {
   // console.log(data.todos);
   return (
     <div>
+      <Link to="/login">Login</Link>
+      <div onClick={() => auth.logout()}> Logout </div>
+      
       {!data ? (
         <div>No data</div>
       ) : (
@@ -46,7 +52,7 @@ function App() {
         </ul>
       )}
 
-      <form 
+      <form
         onSubmit={async (e) => {
           e.preventDefault();
 
@@ -66,17 +72,16 @@ function App() {
           setTodoName("");
         }}
       >
-        <input 
-          type="text" 
-          placeholder="What todo.." 
-          value={todoName} 
-          onChange={ (e) => setTodoName(e.target.value)}
+        <input
+          type="text"
+          placeholder="What todo.."
+          value={todoName}
+          onChange={(e) => setTodoName(e.target.value)}
         />
         <button>Add todo</button>
       </form>
-
     </div>
   );
-};
+}
 
 export default App;
