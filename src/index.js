@@ -15,16 +15,16 @@ ReactDOM.render(
 
         <Router>
           <Switch>
-            <Route>
+            <Route exact path="/">
               <App />
             </Route>
 
-            <Route>
+            <Route exact path="/login">
               <Login />
             </Route>
           </Switch>
         </Router>
-        
+
       </NhostApolloProvider>
     </NhostAuthProvider>
   </React.StrictMode>,
