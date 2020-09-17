@@ -24,23 +24,28 @@ export default function Login(props) {
 
   // build form;
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button>Login</button>
+    <div className="ui segment">
+      <h2>Please login to access your data</h2>
+      <form onSubmit={handleSubmit} className="ui form">
+        <div className="field">
+          <input
+            type="email"
+            placeholder="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+        </div>
+        <button className="ui button purple">Login</button>
       </form>
+      <h4>👋🏻</h4>
     </div>
+    
   );
 }

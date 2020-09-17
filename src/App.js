@@ -38,21 +38,27 @@ function App() {
   }
   // console.log(data.todos);
   return (
-    <div>
-      <Link to="/login">Login</Link>
-      <span onClick={() => auth.logout()}> Logout </span>
+    <div className="ui segment">
+      <div className="ui tiny buttons">
+        <Link to="/login" className="ui disabled button purple">Login</Link>
+        <span className="ui basic button purple" onClick={() => auth.logout()}> Logout </span>
+      </div>
 
       {!data ? (
         <div>No data</div>
       ) : (
-        <ul>
-          {data.todos.map((todo) => {
-            return <li key={todo.id}>{todo.name}</li>;
-          })}
-        </ul>
+        <div className="ui bulleted list">
+          <ul >
+            {data.todos.map((todo) => {
+              return <li key={todo.id}><h3 className="list-text">{todo.name}</h3></li>;
+            })}
+          </ul>
+
+        </div>
       )}
 
       <form
+        className="ui form"
         onSubmit={async (e) => {
           e.preventDefault();
 
@@ -72,13 +78,15 @@ function App() {
           setTodoName("");
         }}
       >
-        <input
-          type="text"
-          placeholder="What todo.."
-          value={todoName}
-          onChange={(e) => setTodoName(e.target.value)}
-        />
-        <button>Add todo</button>
+        <div className="field">
+          <input
+            type="text"
+            placeholder="What todo.."
+            value={todoName}
+            onChange={(e) => setTodoName(e.target.value)}
+          />
+        </div>
+        <button className="ui button purple">Add todo</button>
       </form>
     </div>
   );

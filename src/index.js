@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import Login from "./components/Login";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from './components/PrivateRoute';
 import { auth } from "./util/nhost";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { NhostAuthProvider, NhostApolloProvider } from "react-nhost";
-// import './index.css';
+import './index.css';
 const URL_Nhost = "https://hasura-wbfqe0lb.nhost.app/v1/graphql";
 
 ReactDOM.render(
@@ -14,9 +15,9 @@ ReactDOM.render(
       <NhostApolloProvider auth={auth} gqlEndpoint={URL_Nhost}>
         <Router>
           <Switch>
-            <Route exact path="/">
+            <PrivateRoute exact path="/">
               <App />
-            </Route>
+            </PrivateRoute>
             <Route exact path="/login">
               <Login />
             </Route>
