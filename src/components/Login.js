@@ -39,6 +39,7 @@ export default function Login(props) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <button>Login</button>
       </form>
     </div>
   );
