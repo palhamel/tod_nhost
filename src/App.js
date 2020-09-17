@@ -40,8 +40,8 @@ function App() {
   return (
     <div>
       <Link to="/login">Login</Link>
-      <div onClick={() => auth.logout()}> Logout </div>
-      
+      <span onClick={() => auth.logout()}> Logout </span>
+
       {!data ? (
         <div>No data</div>
       ) : (
