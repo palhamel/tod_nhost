@@ -44,7 +44,7 @@ export default function Login(props) {
         </div>
         <button className="ui button purple">Login</button>
       </form>
-      <h4>👋🏻</h4>
+      <span role="img" aria-label="image of hand">👋🏻</span>
     </div>
     
   );
