@@ -44,7 +44,11 @@ export default function Login(props) {
         </div>
         <button className="ui button purple">Login</button>
       </form>
-      <span role="img" aria-label="image of hand">👋🏻</span>
+      <div className="badge">
+        <div className="ui right floated small segment">
+          <p><i className="angle right icon"></i>Built with <a href="https://nhost.io/">Nhost  </a><span role="img" aria-label="image of hand">  👋🏻</span> </p>
+        </div>
+      </div>
     </div>
     
   );

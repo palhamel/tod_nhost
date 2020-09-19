@@ -20,3 +20,11 @@ body {
   font-weight: 500;
   font-size: 1.5rem;
 }
+
+.badge {
+  margin-top: 2rem
+}
+
+a {
+  color: blueviolet;
+}

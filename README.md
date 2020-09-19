@@ -1,9 +1,9 @@
 ## Project using Nhost, a Jamstack backend with Hasura. 
 
-* https://nhost.io/
-* https://hasura.io/
-* With PostgreSQL, GraphQL and Hasura.
+* Nhost, https://nhost.io/
+* PostgreSQL, GraphQL and Hasura, https://hasura.io/
 * User management and Storage.
+* Form validation
 
 
 #### Tech used: 
@@ -15,11 +15,11 @@
 
 
 ## View it live
-https://boring-lovelace-818beb.netlify.app/
+https://distracted-mayer-5b4416.netlify.app/
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/33b5be52-9217-4090-a88a-1fed94ce2a67/deploy-status)](https://app.netlify.com/sites/boring-lovelace-818beb/deploys)
-
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/16aee451-cca9-468b-9401-ab8f83870277/deploy-status)](https://app.netlify.com/sites/distracted-mayer-5b4416/deploys)
 
 
+
+![](readme.png)
 
