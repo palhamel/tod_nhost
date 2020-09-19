@@ -46,7 +46,7 @@ export default function Login(props) {
       </form>
       <div className="badge">
         <div className="ui right floated small segment">
-          <p><i className="angle right icon"></i>Built with <a href="https://nhost.io/">Nhost  </a><span role="img" aria-label="image of hand">  👋🏻</span> </p>
+          <p><i className="angle right icon"></i>Built with <a href="https://nhost.io/" target="_blank" rel="noopener noreferrer">Nhost</a><span role="img" aria-label="image of hand">  👋🏻</span> </p>
         </div>
       </div>
     </div>
