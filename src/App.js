@@ -81,6 +81,8 @@ function App() {
         <div className="field">
           <input
             type="text"
+            pattern=".{3,}"   
+            required title="3 characters minimum"
             placeholder="What todo.."
             value={todoName}
             onChange={(e) => setTodoName(e.target.value)}
